@@ -8,7 +8,7 @@ internal class PaginationTest {
     @Test
     fun `should render empty pagination`() {
         assertEquals(
-            "{}",
+            "%7B%7D",
             Pagination(null, null).toString()
         )
     }
@@ -16,7 +16,7 @@ internal class PaginationTest {
     @Test
     fun `should render cursor pagination`() {
         assertEquals(
-            "{\"cursor\": \"abcd\"}",
+            "%7B%22cursor%22%3A+%22abcd%22%7D",
             Pagination("abcd", null).toString()
         )
     }
@@ -24,7 +24,7 @@ internal class PaginationTest {
     @Test
     fun `should render first pagination`() {
         assertEquals(
-            "{\"first\": 10}",
+            "%7B%22first%22%3A+10%7D",
             Pagination(null, 10).toString()
         )
     }
@@ -32,7 +32,7 @@ internal class PaginationTest {
     @Test
     fun `should render full pagination`() {
         assertEquals(
-            "{\"cursor\": \"abcd\",\"first\": 10}",
+            "%7B%22cursor%22%3A+%22abcd%22%2C%22first%22%3A+10%7D",
             Pagination("abcd", 10).toString()
         )
     }

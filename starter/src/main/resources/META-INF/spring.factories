@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.rarible.looksrare.client.autoconfigure.LooksrareClientAutoConfiguration,\
+com.rarible.looksrare.client.autoconfigure.LooksrareUserAgentProviderAutoConfiguration
