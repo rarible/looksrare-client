@@ -36,8 +36,6 @@ import java.nio.charset.StandardCharsets
 import java.time.Duration
 import java.util.concurrent.TimeUnit
 
-
-
 abstract class AbstractLooksrareClient(
     endpoint: URI,
     protected val apiKey: String?,
