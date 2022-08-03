@@ -25,7 +25,7 @@ data class LooksrareOrder(
 
     val currencyAddress: Address,
 
-    val amount: Int,
+    val amount: BigInteger,
 
     val price: BigInteger,
 
