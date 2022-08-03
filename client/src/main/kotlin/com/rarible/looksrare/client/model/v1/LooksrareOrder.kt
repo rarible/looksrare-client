@@ -1,17 +1,15 @@
 package com.rarible.looksrare.client.model.v1
 
 import com.fasterxml.jackson.annotation.JsonFormat
-import com.fasterxml.jackson.annotation.JsonProperty
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize
 import com.rarible.looksrare.client.deserializer.WordDeserializer
 import io.daonomic.rpc.domain.Binary
 import io.daonomic.rpc.domain.Word
 import scalether.domain.Address
-import java.math.BigDecimal
 import java.math.BigInteger
 import java.time.Instant
 
-data class LooksRareOrder(
+data class LooksrareOrder(
 
     val hash: Word,
 

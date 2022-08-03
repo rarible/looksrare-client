@@ -1,15 +1,13 @@
 package com.rarible.looksrare.client
 
 import com.rarible.looksrare.client.agent.UserAgentProvider
-import com.rarible.looksrare.client.model.v1.LooksRareOrder
+import com.rarible.looksrare.client.model.v1.LooksrareOrder
 import com.rarible.looksrare.client.model.v1.OrdersRequest
 import com.rarible.looksrare.client.model.v1.Pagination
-import com.rarible.looksrare.client.model.v1.SortBy
 import com.rarible.looksrare.client.model.v1.Sort
 import com.rarible.looksrare.client.model.v1.Status
 import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Assertions
-import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
 import java.net.URI
 import java.time.Instant
@@ -25,7 +23,7 @@ internal class LooksrareClientTest {
 
     @Test
     fun `should get all orders in 10 pages`() = runBlocking {
-        val orders = mutableListOf<LooksRareOrder>()
+        val orders = mutableListOf<LooksrareOrder>()
         val listedBefore = Instant.now()
         var lastHash: String? = null
 

@@ -2,7 +2,7 @@ package com.rarible.looksrare.client
 
 import com.rarible.looksrare.client.agent.UserAgentProvider
 import com.rarible.looksrare.client.model.LooksrareResult
-import com.rarible.looksrare.client.model.v1.LooksRareOrders
+import com.rarible.looksrare.client.model.v1.LooksrareOrders
 import com.rarible.looksrare.client.model.v1.OrdersRequest
 import com.rarible.looksrare.client.model.v1.Status
 import java.net.URI
@@ -15,7 +15,7 @@ class LooksrareClientImpl(
     logRawJson: Boolean = false
 ) : LooksrareClient, AbstractLooksrareClient(endpoint, apiKey, userAgentProvider, proxy, logRawJson) {
 
-    override suspend fun getOrders(request: OrdersRequest): LooksrareResult<LooksRareOrders> {
+    override suspend fun getOrders(request: OrdersRequest): LooksrareResult<LooksrareOrders> {
         val uri = uriBuilderFactory.builder().run {
             path("/api/v1/orders")
             queryParam("isOrderAsk", request.isOrderAsk)

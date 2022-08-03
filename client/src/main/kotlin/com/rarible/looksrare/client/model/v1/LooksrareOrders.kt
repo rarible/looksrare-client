@@ -1,8 +1,8 @@
 package com.rarible.looksrare.client.model.v1
 
-data class LooksRareOrders(
+data class LooksrareOrders(
     val success: Boolean,
     val message: String?,
-    val data: List<LooksRareOrder>
+    val data: List<LooksrareOrder>
 )
 
