@@ -39,7 +39,7 @@ data class LooksrareOrder(
 
     val minPercentageToAsk: Int,
 
-    val params: String?,
+    val params: Binary?,
 
     val status: Status,
 

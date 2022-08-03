@@ -8,10 +8,12 @@ import com.rarible.looksrare.client.model.v1.Sort
 import com.rarible.looksrare.client.model.v1.Status
 import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
 import java.net.URI
 import java.time.Instant
 
+@Disabled
 internal class LooksrareClientTest {
     private val client = LooksrareClientImpl(
         endpoint = URI.create("https://api.looksrare.org/"),
