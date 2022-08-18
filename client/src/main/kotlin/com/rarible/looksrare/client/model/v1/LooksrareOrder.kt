@@ -29,7 +29,7 @@ data class LooksrareOrder(
 
     val price: BigInteger,
 
-    val nonce: Long,
+    val nonce: BigInteger,
 
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="s")
     val startTime: Instant,

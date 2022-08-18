@@ -1,0 +1,4 @@
+rarible:
+  looksrare:
+    api-key: "test-api-key"
+    proxy: "http://test-test:password@proxy.com:123"

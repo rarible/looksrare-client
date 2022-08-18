@@ -17,7 +17,7 @@ import java.time.Instant
 internal class LooksrareClientTest {
     private val client = LooksrareClientImpl(
         endpoint = URI.create("https://api.looksrare.org/"),
-        apiKey = null,
+        apiKey = "test",
         userAgentProvider = UserAgentProvider.empty(),
         proxy = null,
         logRawJson = true
