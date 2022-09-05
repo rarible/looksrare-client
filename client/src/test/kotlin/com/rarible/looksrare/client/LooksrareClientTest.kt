@@ -6,6 +6,7 @@ import com.rarible.looksrare.client.model.v1.OrdersRequest
 import com.rarible.looksrare.client.model.v1.Pagination
 import com.rarible.looksrare.client.model.v1.Sort
 import com.rarible.looksrare.client.model.v1.Status
+import io.github.resilience4j.ratelimiter.RateLimiter
 import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Disabled
@@ -20,7 +21,8 @@ internal class LooksrareClientTest {
         apiKey = "test",
         userAgentProvider = UserAgentProvider.empty(),
         proxy = null,
-        logRawJson = true
+        logRawJson = true,
+        rateLimiter = RateLimiter.ofDefaults("test")
     )
 
     @Test

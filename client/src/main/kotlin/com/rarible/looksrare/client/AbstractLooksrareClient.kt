@@ -11,6 +11,8 @@ import com.rarible.looksrare.client.model.LooksrareError
 import com.rarible.looksrare.client.model.LooksrareErrorCode
 import com.rarible.looksrare.client.model.LooksrareResult
 import com.rarible.looksrare.client.model.OperationResult
+import io.github.resilience4j.ratelimiter.RateLimiter
+import io.github.resilience4j.reactor.ratelimiter.operator.RateLimiterOperator
 import io.netty.channel.ChannelOption
 import io.netty.channel.epoll.EpollChannelOption
 import io.netty.handler.timeout.ReadTimeoutHandler
@@ -41,7 +43,8 @@ abstract class AbstractLooksrareClient(
     protected val apiKey: String?,
     protected val userAgentProvider: UserAgentProvider?,
     proxy: URI?,
-    protected val logRawJson: Boolean = false
+    protected val logRawJson: Boolean = false,
+    protected val rateLimiter: RateLimiter
 ) {
     protected val logger = LoggerFactory.getLogger(javaClass)
 
@@ -82,7 +85,11 @@ abstract class AbstractLooksrareClient(
 
     protected suspend  inline fun <reified T> getResult(response: ClientResponse): LooksrareResult<T> {
         val httpCode = response.statusCode().value()
-        val body = response.bodyToMono<ByteArray>().awaitFirstOrNull() ?: EMPTY_BODY
+        val body = response
+            .bodyToMono<ByteArray>()
+            .transformDeferred(RateLimiterOperator.of(rateLimiter))
+            .awaitFirstOrNull() ?: EMPTY_BODY
+
         return when (response.statusCode()) {
             HttpStatus.OK -> {
                 if (logRawJson) {
