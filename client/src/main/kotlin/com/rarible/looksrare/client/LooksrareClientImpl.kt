@@ -5,6 +5,7 @@ import com.rarible.looksrare.client.model.LooksrareResult
 import com.rarible.looksrare.client.model.v1.LooksrareOrders
 import com.rarible.looksrare.client.model.v1.OrdersRequest
 import com.rarible.looksrare.client.model.v1.Status
+import io.github.resilience4j.ratelimiter.RateLimiter
 import java.net.URI
 
 class LooksrareClientImpl(
@@ -12,8 +13,9 @@ class LooksrareClientImpl(
     apiKey: String?,
     userAgentProvider: UserAgentProvider?,
     proxy: URI?,
-    logRawJson: Boolean = false
-) : LooksrareClient, AbstractLooksrareClient(endpoint, apiKey, userAgentProvider, proxy, logRawJson) {
+    logRawJson: Boolean = false,
+    rateLimiter: RateLimiter
+) : LooksrareClient, AbstractLooksrareClient(endpoint, apiKey, userAgentProvider, proxy, logRawJson, rateLimiter) {
 
     override suspend fun getOrders(request: OrdersRequest): LooksrareResult<LooksrareOrders> {
         val uri = uriBuilderFactory.builder().run {
