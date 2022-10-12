@@ -27,6 +27,6 @@ class LooksrareClientAutoConfiguration(
 
     private companion object {
         val LOOKSRARE_ENDPOINT: URI = URI.create("https://api.looksrare.org")
-        val TESTNET_LOOKSRARE_ENDPOINT: URI = URI.create("https://api-rinkeby.looksrare.org")
+        val TESTNET_LOOKSRARE_ENDPOINT: URI = URI.create("https://api-goerli.looksrare.org")
     }
 }
