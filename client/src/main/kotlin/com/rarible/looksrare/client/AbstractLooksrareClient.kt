@@ -86,7 +86,7 @@ abstract class AbstractLooksrareClient(
         return when (response.statusCode()) {
             HttpStatus.OK -> {
                 if (logRawJson) {
-                    logger.info("Raw OpenSea orders: ${String(body)}", )
+                    logger.info("Raw LooksRare orders: ${String(body)}")
                 }
                 OperationResult.success(mapper.readValue(body))
             }
