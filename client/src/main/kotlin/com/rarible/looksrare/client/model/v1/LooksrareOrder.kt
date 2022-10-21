@@ -1,6 +1,5 @@
 package com.rarible.looksrare.client.model.v1
 
-import com.fasterxml.jackson.annotation.JsonFormat
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize
 import com.rarible.looksrare.client.deserializer.WordDeserializer
 import io.daonomic.rpc.domain.Binary
@@ -31,10 +30,8 @@ data class LooksrareOrder(
 
     val nonce: BigInteger,
 
-    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="s")
+    // Represented as seconds, default JSR310 parser able to handle it in right way
     val startTime: Instant,
-
-    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="s")
     val endTime: Instant,
 
     val minPercentageToAsk: Int,

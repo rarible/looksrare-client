@@ -1,0 +1,21 @@
+{
+  "hash": "0x68755730c7fc96e6802a9631d627614f2f5ca4bc9b90e27b89c4112a516fa454",
+  "collectionAddress": "0x42fc55025E8BfEc14F55DC8fcEbc7861157C59A6",
+  "tokenId": "2",
+  "isOrderAsk": true,
+  "signer": "0xa929a26faEd421E03C1aF272fC93Ac3A4A7FC661",
+  "strategy": "0xc771c0A3a7d738A1E12Aa88829A658bAefb32f0f",
+  "currencyAddress": "0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6",
+  "amount": "1",
+  "price": "999999999000000000000000000",
+  "nonce": "2",
+  "startTime": "1664150625",
+  "endTime": 1666742618,
+  "minPercentageToAsk": "9800",
+  "params": "",
+  "status": "VALID",
+  "signature": "0x2eb25b7ff1f9a0ee20e7c6928f92997c1f7cd5ae69f88b7c162057f5832ae1dd4e0b3cf1f262c10090beff13fd8fe9c798bab4459f509389240ea99407d5e4361b",
+  "v": 27,
+  "r": "0x2eb25b7ff1f9a0ee20e7c6928f92997c1f7cd5ae69f88b7c162057f5832ae1dd",
+  "s": "0x4e0b3cf1f262c10090beff13fd8fe9c798bab4459f509389240ea99407d5e436"
+}
