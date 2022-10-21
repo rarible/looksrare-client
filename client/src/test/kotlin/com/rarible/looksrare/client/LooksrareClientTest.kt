@@ -15,6 +15,7 @@ import java.time.Instant
 
 @Disabled
 internal class LooksrareClientTest {
+
     private val client = LooksrareClientImpl(
         endpoint = URI.create("https://api.looksrare.org/"),
         apiKey = "test",
