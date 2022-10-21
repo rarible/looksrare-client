@@ -10,7 +10,7 @@
   "price": "999999999000000000000000000",
   "nonce": "2",
   "startTime": "1664150625",
-  "endTime": "1666742618",
+  "endTime": 1666742618,
   "minPercentageToAsk": "9800",
   "params": "",
   "status": "VALID",
