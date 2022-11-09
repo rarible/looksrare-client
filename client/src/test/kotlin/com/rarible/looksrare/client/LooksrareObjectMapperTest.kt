@@ -26,7 +26,7 @@ class LooksrareObjectMapperTest {
         assertThat(order.signer).isEqualTo(Address.apply("0xa929a26faed421e03c1af272fc93ac3a4a7fc661"))
         assertThat(order.strategy).isEqualTo(Address.apply("0xc771c0a3a7d738a1e12aa88829a658baefb32f0f"))
         assertThat(order.currencyAddress).isEqualTo(Address.apply("0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6"))
-        assertThat(order.amount).isEqualTo(1)
+        assertThat(order.amount).isEqualTo(BigInteger.ONE)
         assertThat(order.price).isEqualTo(BigInteger("999999999000000000000000000"))
         assertThat(order.nonce).isEqualTo(2)
         assertThat(order.startTime).isEqualTo(Instant.ofEpochSecond(1664150625))
