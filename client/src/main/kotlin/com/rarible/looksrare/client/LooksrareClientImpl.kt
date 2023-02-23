@@ -31,7 +31,9 @@ class LooksrareClientImpl(
             request.sort?.let { sort ->
                 queryParam(OrdersRequest::sort.name, sort.name)
             }
-            queryParam("status[]", (request.status ?: listOf(Status.VALID)))
+            request.status?.let {
+                queryParam("status[]", (request.status))
+            }
             build()
         }
         return getOpenSeaResult(uri)

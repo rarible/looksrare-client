@@ -8,6 +8,7 @@ import com.rarible.looksrare.client.model.v1.Sort
 import com.rarible.looksrare.client.model.v1.Status
 import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
 import java.net.URI
@@ -44,5 +45,22 @@ internal class LooksrareClientTest {
             lastHash = page.last().hash.toString()
         }
         Assertions.assertEquals(100, orders.size)
+    }
+
+    @Test
+    fun `should `() = runBlocking<Unit> {
+        val startTime = Instant.ofEpochSecond(1676623524L)
+        val request = OrdersRequest(
+            isOrderAsk = true,
+            startTime = startTime,
+            endTime = null,
+            // This param breaks startTime filtering
+//            status = listOf(Status.VALID),
+            status = null,
+            sort = Sort.NEWEST,
+            pagination = null
+        )
+        val page = client.getOrders(request).ensureSuccess().data
+        assertTrue(page.all { it.startTime <= startTime })
     }
 }
