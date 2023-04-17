@@ -27,7 +27,7 @@ data class LooksrareOrder(
 
     val strategyId: Long,
 
-    val collectionType: Long,
+    val collectionType: CollectionType,
 
     // Represented as seconds, default JSR310 parser able to handle it in right way
     val startTime: Instant,
@@ -52,4 +52,5 @@ data class LooksrareOrder(
 
     val status: Status,
 )
+
 
