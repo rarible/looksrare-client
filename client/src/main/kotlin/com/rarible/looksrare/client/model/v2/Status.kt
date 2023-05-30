@@ -4,5 +4,9 @@ enum class Status {
     CANCELLED,
     EXECUTED,
     EXPIRED,
-    VALID
+    VALID,
+    INVALID_OWNER,
+    ERC_APPROVAL,
+    ERC20_APPROVAL,
+    ERC20_BALANCE,
 }
