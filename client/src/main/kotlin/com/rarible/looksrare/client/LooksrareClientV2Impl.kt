@@ -32,6 +32,12 @@ class LooksrareClientV2Impl(
             request.status?.let {
                 queryParam("status", request.status)
             }
+            request.collection?.let {
+                queryParam("collection", it.toString())
+            }
+            request.itemId?.let {
+                queryParam("itemId", it)
+            }
             build()
         }
         return getOpenSeaResult(uri)

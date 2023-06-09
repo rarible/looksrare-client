@@ -1,11 +1,17 @@
 package com.rarible.looksrare.client.model.v2
 
+import scalether.domain.Address
+
 data class OrdersRequest(
-    val quoteType: QuoteType,
+    val quoteType: QuoteType = QuoteType.ASK,
 
-    val sort: Sort?,
+    val collection: Address? = null,
 
-    val pagination: Pagination?,
+    val itemId: String? = null,
 
-    val status: Status?,
+    val sort: Sort? = Sort.NEWEST,
+
+    val pagination: Pagination? = null,
+
+    val status: Status? = Status.VALID,
 )

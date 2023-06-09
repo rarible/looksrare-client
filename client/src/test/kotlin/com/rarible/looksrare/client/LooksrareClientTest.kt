@@ -15,12 +15,15 @@ import com.rarible.looksrare.client.model.v2.Sort as SortV2
 import com.rarible.looksrare.client.model.v2.Status as StatusV2
 
 import kotlinx.coroutines.runBlocking
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
+import scalether.domain.Address
 import java.net.URI
 import java.time.Instant
+import kotlin.contracts.contract
 
 @Disabled
 internal class LooksrareClientTest {
@@ -96,5 +99,15 @@ internal class LooksrareClientTest {
         )
         val page = client.getOrders(request).ensureSuccess().data
         assertTrue(page.all { it.startTime <= startTime })
+    }
+
+    @Test
+    fun `should get orders for item`() = runBlocking<Unit> {
+        val request = OrdersRequestV2(
+            collection = Address.apply("0x60E4d786628Fea6478F785A6d7e704777c86a7c6"),
+            itemId = "8874",
+        )
+        val page = clientV2.getOrders(request).ensureSuccess().data
+        assertThat(page).hasSize(2)
     }
 }
