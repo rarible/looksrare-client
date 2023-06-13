@@ -34,6 +34,12 @@ class LooksrareClientImpl(
             request.status?.let {
                 queryParam("status[]", (request.status))
             }
+            request.collection?.let {
+                queryParam("collection", it.toString())
+            }
+            request.tokenId?.let {
+                queryParam("tokenId", it)
+            }
             build()
         }
         return getOpenSeaResult(uri)
