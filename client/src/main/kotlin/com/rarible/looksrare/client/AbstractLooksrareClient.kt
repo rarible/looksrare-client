@@ -48,7 +48,7 @@ abstract class AbstractLooksrareClient(
         encodingMode = DefaultUriBuilderFactory.EncodingMode.NONE
     }
 
-    protected suspend  inline fun <reified T> getOpenSeaResult(uri: URI): LooksrareResult<T> {
+    protected suspend  inline fun <reified T> getLooksrareResult(uri: URI): LooksrareResult<T> {
         val response = transport.get()
             .uri(uri)
             .run {

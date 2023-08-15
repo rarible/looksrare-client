@@ -4,7 +4,6 @@ import com.rarible.looksrare.client.agent.UserAgentProvider
 import com.rarible.looksrare.client.model.LooksrareResult
 import com.rarible.looksrare.client.model.v1.LooksrareOrders
 import com.rarible.looksrare.client.model.v1.OrdersRequest
-import com.rarible.looksrare.client.model.v1.Status
 import java.net.URI
 
 class LooksrareClientImpl(
@@ -42,6 +41,6 @@ class LooksrareClientImpl(
             }
             build()
         }
-        return getOpenSeaResult(uri)
+        return getLooksrareResult(uri)
     }
 }
