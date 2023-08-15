@@ -23,7 +23,7 @@ import java.net.URI
 import java.time.Instant
 
 @Disabled
-internal class LooksrareClientManualTest {
+internal class LooksrareClientMt {
 
     private val client = LooksrareClientImpl(
         endpoint = URI.create("https://api.looksrare.org/"),
