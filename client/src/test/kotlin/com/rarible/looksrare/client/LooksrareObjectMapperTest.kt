@@ -14,7 +14,8 @@ class LooksrareObjectMapperTest {
 
     @Test
     fun test() {
-        val json = String(LooksrareClientTest::class.java.getResourceAsStream("/order.json").readBytes())
+        val json = String(LooksrareObjectMapperTest::class.java.getResourceAsStream("/order.json")
+            .use { it.readBytes() })
         val order = LooksrareObjectMapper.mapper.readValue(json, LooksrareOrder::class.java)
 
         assertThat(order.hash).isEqualTo(
@@ -43,5 +44,4 @@ class LooksrareObjectMapperTest {
         assertThat(order.r).isEqualTo(Word.apply("0x2eb25b7ff1f9a0ee20e7c6928f92997c1f7cd5ae69f88b7c162057f5832ae1dd"))
         assertThat(order.s).isEqualTo(Word.apply("0x4e0b3cf1f262c10090beff13fd8fe9c798bab4459f509389240ea99407d5e436"))
     }
-
 }

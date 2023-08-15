@@ -7,12 +7,10 @@ import com.rarible.looksrare.client.model.v1.Pagination
 import com.rarible.looksrare.client.model.v1.Sort
 import com.rarible.looksrare.client.model.v1.Status
 import com.rarible.looksrare.client.model.v2.QuoteType
-import io.daonomic.rpc.domain.Word
 import com.rarible.looksrare.client.model.v2.LooksrareOrder as LooksrareOrderV2
 import com.rarible.looksrare.client.model.v2.OrdersRequest as OrdersRequestV2
 import com.rarible.looksrare.client.model.v2.Pagination as PaginationV2
 import com.rarible.looksrare.client.model.v2.Sort as SortV2
-import com.rarible.looksrare.client.model.v2.Status as StatusV2
 
 import kotlinx.coroutines.runBlocking
 import org.assertj.core.api.Assertions.assertThat
@@ -23,10 +21,9 @@ import org.junit.jupiter.api.Test
 import scalether.domain.Address
 import java.net.URI
 import java.time.Instant
-import kotlin.contracts.contract
 
 @Disabled
-internal class LooksrareClientTest {
+internal class LooksrareClientManualTest {
 
     private val client = LooksrareClientImpl(
         endpoint = URI.create("https://api.looksrare.org/"),

@@ -7,7 +7,7 @@ import java.math.BigInteger
 import java.time.Instant
 
 data class LooksrareOrder(
-    val id: String,
+    override val id: String,
 
     val hash: Word,
 
@@ -40,7 +40,7 @@ data class LooksrareOrder(
 
     val signature: Binary,
 
-    val createdAt: Instant,
+    override val createdAt: Instant = Instant.now(),
 
     val merkleRoot: Binary?,
 
@@ -51,6 +51,6 @@ data class LooksrareOrder(
     val itemIds: List<BigInteger>,
 
     val status: Status,
-)
+): LooksrareObject
 
 
