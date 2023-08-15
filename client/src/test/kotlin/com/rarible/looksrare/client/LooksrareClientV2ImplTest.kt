@@ -34,7 +34,7 @@ internal class LooksrareClientV2ImplTest {
         looksRareServer.enqueue(
             MockResponse().setBody(
                 LooksrareClientV2ImplTest::class.java.getResourceAsStream("/getEventsResponse.json")
-                    .use { String(it.readAllBytes()) })
+                    .use { String(it.readBytes()) })
         )
 
         val result = looksrareClientV2.getEvents(EventsRequest(type = LooksrareEventType.CANCEL_LIST))
